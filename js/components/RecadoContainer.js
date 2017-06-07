@@ -34,7 +34,9 @@ export default class RecadoContainer extends Component {
     render() {
         return (
             <View style={styles.container}>
-
+                <Text style={styles.subject} >
+                    Assunto: {this.props.subject}
+                </Text>
             </View>
         );
     }
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     subject: {
         fontSize: 12,
         fontWeight: 'bold',
-        margin: 3
+        margin: 75
     },
     textEmail: {
         fontSize: 12,

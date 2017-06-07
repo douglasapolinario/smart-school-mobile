@@ -57,7 +57,10 @@ export default class RecadosContainer extends Component {
                 <TouchableHighlight style={styles.addButton}
                     underlayColor='#9eceff' onPress={() => this.props.navigator.push({
                     component: RecadoContainer,
-                    title: 'Recado'
+                    title: 'Recado',
+                    passProps: {
+                        subject: 'Festa Junina'
+                    }
                 })} >
                     <Text style={{fontSize: 30, color: 'white'}}>+</Text>
                 </TouchableHighlight>

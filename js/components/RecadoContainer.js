@@ -35,7 +35,10 @@ export default class RecadoContainer extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.subject} >
-                    Assunto: {this.props.subject}
+                    Assunto: {this.props.assunto}
+                </Text>
+                <Text style={styles.textEmail} numberOfLines={20}>
+                    {this.props.textoRecado}
                 </Text>
             </View>
         );
@@ -53,12 +56,13 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     subject: {
-        fontSize: 12,
+        fontSize: 16,
         fontWeight: 'bold',
-        margin: 75
+        marginTop: 75,
+        marginLeft: 15
     },
     textEmail: {
-        fontSize: 12,
-        margin: 3,
+        fontSize: 13,
+        margin: 15,
     }
 });

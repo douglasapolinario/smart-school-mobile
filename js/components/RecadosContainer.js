@@ -19,11 +19,11 @@ export default class RecadosContainer extends Component {
             [
                 {
                     "assunto": "Festa Junina",
-                    "texto": 'Olá Papai, no dia 25/06/2017 teremos nossa festa junina.'
+                    "textoRecado": 'Olá Papai, no dia 25/06/2017 teremos nossa festa junina.'
                 },
                 {
                     "assunto": "Mau Comportamento",
-                    "texto": 'Ola Papai, hoje o Richard Oliveira Corria Apolinario se comportou mau na hora da aula, por favor, conversar com o mesmo assim que possivel.'
+                    "textoRecado": 'Ola Papai, hoje o Richard Oliveira Corria Apolinario se comportou mau na hora da aula, por favor, conversar com o mesmo assim que possivel.'
                 }
             ]
 
@@ -42,13 +42,17 @@ export default class RecadosContainer extends Component {
                     renderRow={(data) =>
                         <TouchableOpacity style={styles.listFlexCol} onPress={() => this.props.navigator.push({
                             component: RecadoContainer,
-                            title: 'Recado'
+                            title: 'Recado',
+                            passProps: {
+                                assunto: data.assunto,
+                                textoRecado: data.textoRecado
+                            }
                         })} >
                             <Text style={styles.subject} numberOfLines={1}>
                                 {data.assunto}
                             </Text>
                             <Text style={styles.textEmail} numberOfLines={2}>
-                                {data.texto}
+                                {data.textoRecado}
                             </Text>
                         </TouchableOpacity>
                     }
@@ -59,7 +63,8 @@ export default class RecadosContainer extends Component {
                     component: RecadoContainer,
                     title: 'Recado',
                     passProps: {
-                        subject: 'Festa Junina'
+                        assunto: 'Novo recado',
+                        textoRecado: 'Fazer uma nova tela'
                     }
                 })} >
                     <Text style={{fontSize: 30, color: 'white'}}>+</Text>

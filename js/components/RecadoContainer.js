@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
+    TextInput,
     Text,
     View,
     ListView,
@@ -40,6 +41,13 @@ export default class RecadoContainer extends Component {
                 <Text style={styles.textEmail} numberOfLines={20}>
                     {this.props.textoRecado}
                 </Text>
+
+                <TextInput
+                    style={{height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 51}}
+                    autoFocus={true}
+                    multiline={true}
+                    value={this.state.text}
+                />
             </View>
         );
     }
@@ -49,6 +57,8 @@ export default class RecadoContainer extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         // alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },

@@ -35,19 +35,22 @@ export default class RecadoContainer extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.subject} >
-                    Assunto: {this.props.assunto}
-                </Text>
-                <Text style={styles.textEmail} numberOfLines={20}>
-                    {this.props.textoRecado}
-                </Text>
-
-                <TextInput
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 51}}
-                    autoFocus={true}
-                    multiline={true}
-                    value={this.state.text}
-                />
+                <View>
+                    <Text style={styles.subject} >
+                        Assunto: {this.props.assunto}
+                    </Text>
+                    <Text style={styles.textEmail} numberOfLines={20}>
+                        {this.props.textoRecado}
+                    </Text>
+                </View>
+                <View>
+                    <TextInput
+                        style={styles.textEmailInput}
+                        autoFocus={true}
+                        multiline={true}
+                        value={this.state.text}
+                        placeholder="Digite sua mensagem..." />
+                </View>
             </View>
         );
     }
@@ -59,11 +62,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        // alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    listFlexCol: {
-        flexDirection: 'column'
+        backgroundColor: '#F5FCFF'
     },
     subject: {
         fontSize: 16,
@@ -73,6 +72,14 @@ const styles = StyleSheet.create({
     },
     textEmail: {
         fontSize: 13,
-        margin: 15,
+        marginTop: 10,
+        marginLeft: 5,
+        marginRight: 20
+    },
+    textEmailInput: {
+        height: 40,
+        // borderColor: 'gray',
+        // borderWidth: 1,
+        marginBottom: 51
     }
 });

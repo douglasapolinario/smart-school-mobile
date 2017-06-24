@@ -7,7 +7,8 @@ import {
     View,
     ListView,
     TouchableOpacity,
-    TouchableHighlight
+    TouchableHighlight,
+    Image
 } from 'react-native';
 
 export default class RecadoContainer extends Component {
@@ -50,6 +51,22 @@ export default class RecadoContainer extends Component {
                         multiline={true}
                         value={this.state.text}
                         placeholder="Digite sua mensagem..." />
+
+                    <TouchableHighlight style={styles.sendButton}
+                                        underlayColor='#d9e9f9'
+                                        onPress={() => this.props.navigator.push({
+                                            component: RecadoContainer,
+                                            title: 'Recado',
+                                            passProps: {
+                                                assunto: 'Novo recado',
+                                                textoRecado: 'Fazer uma nova tela'
+                                            }})}
+                    >
+                        <Image
+                            style={styles.sendImg}
+                            source={require('../images/send.png')}
+                        />
+                    </TouchableHighlight>
                 </View>
             </View>
         );
@@ -78,8 +95,28 @@ const styles = StyleSheet.create({
     },
     textEmailInput: {
         height: 40,
+        marginRight: 50,
         // borderColor: 'gray',
         // borderWidth: 1,
         marginBottom: 51
-    }
+    },
+    sendButton: {
+        height: 42,
+        width: 42,
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        bottom: 60,
+        right:20,
+        shadowRadius: 2,
+        shadowOffset: {
+            height: 1,
+            width: 0
+        }
+    },
+    sendImg: {
+        width: 38,
+        height: 38,
+    },
 });

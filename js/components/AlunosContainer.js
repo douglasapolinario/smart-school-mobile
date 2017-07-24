@@ -23,7 +23,7 @@ export default class AlunosContainer extends Component {
     }
 
     getAlunos = () => {
-        fetch('http://www.mocky.io/v2/5916720f1000006a15759732', {method: 'GET'})
+        fetch('http://localhost:5000/alunos', {method: 'GET'})
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({ dataSource: this.state.dataSource.cloneWithRows(responseJson) })
@@ -44,12 +44,12 @@ export default class AlunosContainer extends Component {
                     <TouchableOpacity
                         onPress={() => this.props.navigator.push({
                             component: AlunoContainer,
-                            title: rowData.name })}
+                            title: rowData.nome })}
                         style={styles.touchable} >
-                        <Image source={{uri: rowData.image}}
+                        <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
                                style={{width: 100, height: 100, borderRadius: 50}} />
                         <Text style={styles.name}>
-                            {rowData.name}
+                            {rowData.nome}
                         </Text>
                     </TouchableOpacity>}
             />

@@ -46,7 +46,7 @@ export default class AlunosContainer extends Component {
                             component: AlunoContainer,
                             title: rowData.nome })}
                         style={styles.touchable} >
-                        <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                        <Image source={{uri: rowData.imagem}}
                                style={{width: 100, height: 100, borderRadius: 50}} />
                         <Text style={styles.name}>
                             {rowData.nome}

@@ -23,10 +23,10 @@ export default class AlunosContainer extends Component {
     }
 
     getAlunos = () => {
-        fetch('http://localhost:5000/alunos', {method: 'GET'})
+        fetch('http://localhost:5000/responsavel/2', {method: 'GET'})
             .then((response) => response.json())
             .then((responseJson) => {
-                this.setState({ dataSource: this.state.dataSource.cloneWithRows(responseJson) })
+                this.setState({ dataSource: this.state.dataSource.cloneWithRows(responseJson.alunos) })
             })
             .catch((error) => {
                 console.error(error);
